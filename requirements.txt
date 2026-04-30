@@ -1,0 +1,8 @@
+python-telegram-bot
+python-dotenv
+Pillow
+rembg
+img2pdf
+pdf2docx
+docx2pdf
+pdf2image
