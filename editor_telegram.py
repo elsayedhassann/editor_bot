@@ -267,3 +267,23 @@ if __name__=='__main__':
     application.add_handler(MessageHandler(filters.PHOTO | filters.Document.ALL, remove_background))
     
     application.run_polling()
+    
+    
+from flask import Flask
+import threading
+
+app_web = Flask('')
+
+@app_web.route('/')
+def home():
+    return "Bot is running!"
+
+def run():
+    app_web.run(host='0.0.0.0', port=10000)
+
+def keep_alive():
+    t = threading.Thread(target=run)
+    t.start()
+
+# قبل run_polling
+keep_alive()
